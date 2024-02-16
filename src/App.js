@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Pert3 from "./pert3";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const router = createBrowserRouter([
+        {
+            path: "/login",
+            element: (
+                <div>
+                    <p>Halaman Login</p>
+                    <form>
+                        <input type="email" />
+                    </form>
+                </div>
+            ),
+        },
+        {
+            path: "/dashboard",
+            element: (
+                <div>
+                    <p>Halaman Dashboard</p>
+                </div>
+            ),
+        },
+        {
+            path: "/latihan",
+            element: <Pert3 />,
+        },
+    ]);
+
+    return <RouterProvider router={router} />;
 }
 
 export default App;

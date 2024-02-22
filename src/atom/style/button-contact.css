@@ -1,0 +1,9 @@
+.btn-contact {
+    display: flex;
+    text-decoration: none;
+    border: solid;
+    border-radius: 8px;
+    color: white;
+    background-color: #289F97;
+    padding: 1rem 2rem;
+}

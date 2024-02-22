@@ -1,5 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Pert3 from "./pert3";
+import Shop from "./pages/shop";
 
 function App() {
     const router = createBrowserRouter([
@@ -25,6 +26,10 @@ function App() {
         {
             path: "/latihan",
             element: <Pert3 />,
+        },
+        {
+            path: "/",
+            element: <Shop />,
         },
     ]);
 

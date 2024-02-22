@@ -1,0 +1,29 @@
+.nav-main {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    padding-right: 6.5rem;
+    padding-left: 6.5rem;
+}
+
+.nav-left2 {
+    display: flex;
+    gap: 3rem;
+}
+
+.nav-left {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    display: flex;
+    text-decoration: none;
+    color: #383A40;
+}
+
+.nav-link:hover {
+    color: #289F97
+}

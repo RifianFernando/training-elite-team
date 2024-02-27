@@ -1,24 +1,26 @@
-import { useEffect, useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import './style/card-shop.css';
-import { productApi } from '../api/productApi';
+import { useProductContext } from '../context/productContext';
 
 export default function CardSection() {
     console.log('render card section');
     // hooks dari card-section
-    const [products, setProducts] = useState([]);
+    // const [products, setProducts] = useState([]);
     const intervalRef = useRef({
         current: 1,
     });
 
-    useEffect(() => {
-        try {
-            fetch('https://fakestoreapi.com/products')
-                .then((res) => res.json())
-                .then((json) => setProducts(json));
-        } catch (e) {
-            console.error(e);
-        }
-    }, []);
+    const { products, setProduct } = useProductContext();
+
+    // useEffect(() => {
+    // try {
+    //     fetch('https://fakestoreapi.com/products')
+    //         .then((res) => res.json())
+    //         .then((json) => setProducts(json));
+    // } catch (e) {
+    //     console.error(e);
+    // }
+    // }, []);
 
     const handleDeleteProduct = (id) => {
         const product = products.find((product) => product.id === id);
@@ -26,12 +28,13 @@ export default function CardSection() {
         const index = products.indexOf(product);
 
         products.splice(index, 1);
-        setProducts([...products]);
+        setProduct([...products]);
     };
-    const update = () => {
-        intervalRef.current = intervalRef.current + 1;
-        console.log(intervalRef.current);
-    };
+
+    // const update = () => {
+    //     intervalRef.current = intervalRef.current + 1;
+    //     console.log(intervalRef.current);
+    // };
 
     return (
         <div className="card-section">
@@ -57,7 +60,7 @@ export default function CardSection() {
                             >
                                 delete
                             </button>
-                            <button onClick={update}>update count</button>
+                            {/* <button onClick={update}>update count</button> */}
                         </div>
                     </div>
                 );

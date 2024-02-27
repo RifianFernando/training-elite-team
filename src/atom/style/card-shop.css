@@ -1,0 +1,25 @@
+.card-section {
+    display: flex;
+    background-color: #289F97;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.card-shop {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 25rem;
+    height: 100%;
+    padding: 1rem;
+    border-radius: 2.5rem;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}

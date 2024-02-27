@@ -1,11 +1,12 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Pert3 from "./pert3";
-import Shop from "./pages/shop";
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Pert3 from './pert3';
+import Shop from './pages/shop';
+import ContactUs from './pages/contactUs';
 
 function App() {
     const router = createBrowserRouter([
         {
-            path: "/login",
+            path: '/login',
             element: (
                 <div>
                     <p>Halaman Login</p>
@@ -16,7 +17,7 @@ function App() {
             ),
         },
         {
-            path: "/dashboard",
+            path: '/dashboard',
             element: (
                 <div>
                     <p>Halaman Dashboard</p>
@@ -24,12 +25,16 @@ function App() {
             ),
         },
         {
-            path: "/latihan",
+            path: '/latihan',
             element: <Pert3 />,
         },
         {
-            path: "/",
+            path: '/',
             element: <Shop />,
+        },
+        {
+            path: '/contact-us',
+            element: <ContactUs />,
         },
     ]);
 

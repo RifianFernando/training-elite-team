@@ -1,16 +1,18 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './style/card-shop.css';
 import { useProductContext } from '../context/productContext';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProducts } from '../redux/product/ProductAction';
 
 export default function CardSection() {
     console.log('render card section');
     // hooks dari card-section
     // const [products, setProducts] = useState([]);
-    const intervalRef = useRef({
-        current: 1,
-    });
+    // const intervalRef = useRef({
+    //     current: 1,
+    // });
 
-    const { products, setProduct } = useProductContext();
+    // const { products, setProduct } = useProductContext();
 
     // useEffect(() => {
     // try {
@@ -22,14 +24,21 @@ export default function CardSection() {
     // }
     // }, []);
 
-    const handleDeleteProduct = (id) => {
-        const product = products.find((product) => product.id === id);
-        // delete product from index
-        const index = products.indexOf(product);
+    // useSelector
+    const products = useSelector((state) => state.products.products);
 
-        products.splice(index, 1);
-        setProduct([...products]);
+    const handleDeleteProduct = (id) => {
+        // const product = products.find((product) => product.id === id);
+        // // delete product from index
+        // const index = products.indexOf(product);
+        // products.splice(index, 1);
+        // setProduct([...products]);
     };
+
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(fetchProducts());
+    }, []);
 
     // const update = () => {
     //     intervalRef.current = intervalRef.current + 1;
